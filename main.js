@@ -292,11 +292,11 @@ function loadKV() {
   //清空本地存储
   clearLocalStorage(); 
 
-  // 从KV中查询, cmd为 "qryall", 查询全部
+  // 从KV中查询, cmd为 "qryAll", 查询全部
   fetch(apiSrv, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ cmd: "qryall", password: password_value })
+    body: JSON.stringify({ cmd: "qryAll", password: password_value })
   }).then(function (response) {    
     return response.json();
   }).then(function (myJson) {
