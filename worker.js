@@ -13,8 +13,8 @@ const config = {
 
 // key in protectKeyList can't read, add, del from UI and API
 const protectKeyList = ["password"];
-const indexHtml = `https://crazypeace.github.io/Url-Shorten-Worker/${config.theme}/index.html`;
-const resultHtml = `https://crazypeace.github.io/Url-Shorten-Worker/${config.theme}/result.html`;
+const indexHtml = `https://lsy223622.github.io/Url-Shorten-Worker/${config.theme}/index.html`;
+const resultHtml = `https://lsy223622.github.io/Url-Shorten-Worker/${config.theme}/result.html`;
 
 const html404 = `<!DOCTYPE html>
   <html lang="zh-CN,en">

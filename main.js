@@ -2,7 +2,7 @@ let res
 
 let apiSrv = window.location.pathname
 let password_value = document.querySelector("#passwordText").value
-// let apiSrv = "https://journal.crazypeace.workers.dev"
+// let apiSrv = "https://journal.lsy223622.workers.dev"
 // let password_value = "journaljournal"
 
 // 这是默认行为, 在不同的index.html中可以设置为不同的行为
@@ -304,8 +304,8 @@ function loadKV() {
     // 成功查询 Succeed
     if (res.status == "200") {
 
-      // 遍历kvlist
-      res.kvlist.forEach(item => {      
+      // 遍历KVList
+      res.KVList.forEach(item => {      
         keyPhrase = item.key;
         valueLongURL = item.value;
         // save to localStorage
