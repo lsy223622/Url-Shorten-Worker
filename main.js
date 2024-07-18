@@ -2,11 +2,9 @@ let res
 
 let apiSrv = window.location.pathname
 let password_value = document.querySelector("#passwordText").value
-// let apiSrv = "https://journal.lsy223622.workers.dev"
-// let password_value = "journaljournal"
 
 // 这是默认行为, 在不同的index.html中可以设置为不同的行为
-// This is default, you can define it to different funciton in different theme index.html
+// This is default, you can define it to different function in different theme index.html
 let buildValueItemFunc = buildValueTxt
 
 function shorturl() {
@@ -51,14 +49,14 @@ function shorturl() {
     modal.show();
 
   }).catch(function (err) {
-    alert("Unknow error. Please retry!");
+    alert("Unknown error. Please retry!");
     console.log(err);
     document.getElementById("addBtn").disabled = false;
     document.getElementById("addBtn").innerHTML = 'Shorten it';
   })
 }
 
-function copyurl(id, attr) {
+function copyUrl(id, attr) {
   let target = null;
 
   if (attr) {
@@ -156,20 +154,20 @@ function addUrlToList(shortUrl, longUrl) {
   keyItem.appendChild(keyTxt)
 
   // 显示二维码按钮
-  let qrcodeBtn = document.createElement('button')  
-  qrcodeBtn.setAttribute('type', 'button')
-  qrcodeBtn.classList.add("btn", "btn-info")
-  qrcodeBtn.setAttribute('onclick', 'buildQrcode(\"' + shortUrl + '\")')
-  qrcodeBtn.setAttribute('id', 'qrcodeBtn-' + shortUrl)
-  qrcodeBtn.innerText = "QR"
-  keyItem.appendChild(qrcodeBtn)
+  let qrCodeBtn = document.createElement('button')  
+  qrCodeBtn.setAttribute('type', 'button')
+  qrCodeBtn.classList.add("btn", "btn-info")
+  qrCodeBtn.setAttribute('onclick', 'buildQRCode(\"' + shortUrl + '\")')
+  qrCodeBtn.setAttribute('id', 'qrCodeBtn-' + shortUrl)
+  qrCodeBtn.innerText = "QR"
+  keyItem.appendChild(qrCodeBtn)
   
   child.appendChild(keyItem)
 
   // 插入一个二级码占位
-  let qrcodeItem = document.createElement('div');
-  qrcodeItem.setAttribute('id', 'qrcode-' + shortUrl)
-  child.appendChild(qrcodeItem)
+  let qrCodeItem = document.createElement('div');
+  qrCodeItem.setAttribute('id', 'qrCode-' + shortUrl)
+  child.appendChild(qrCodeItem)
 
   // 长链接信息 Long url
   child.appendChild(buildValueItemFunc(longUrl))
@@ -214,7 +212,7 @@ function deleteShortUrl(delKeyPhrase) {
     modal.show();
 
   }).catch(function (err) {
-    alert("Unknow error. Please retry!");
+    alert("Unknown error. Please retry!");
     console.log(err);
   })
 }
@@ -245,7 +243,7 @@ function queryVisitCount(qryKeyPhrase) {
     }
 
   }).catch(function (err) {
-    alert("Unknow error. Please retry!");
+    alert("Unknown error. Please retry!");
     console.log(err);
   })
 }
@@ -283,7 +281,7 @@ function query1KV() {
     }
 
   }).catch(function (err) {
-    alert("Unknow error. Please retry!");
+    alert("Unknown error. Please retry!");
     console.log(err);
   })
 }
@@ -319,13 +317,13 @@ function loadKV() {
       modal.show();
     }
   }).catch(function (err) {
-    alert("Unknow error. Please retry!");
+    alert("Unknown error. Please retry!");
     console.log(err);
   })
 }
 
 // 生成二维码
-function buildQrcode(shortUrl) {
+function buildQRCode(shortUrl) {
   // 感谢项目 https://github.com/lrsjng/jquery-qrcode
   var options = {
     // render method: 'canvas', 'image' or 'div'
@@ -379,7 +377,7 @@ function buildQrcode(shortUrl) {
 
     image: null
   };
-  $("#qrcode-" + shortUrl.replace(/(:|\.|\[|\]|,|=|@)/g, "\\$1").replace(/(:|\#|\[|\]|,|=|@)/g, "\\$1") ).empty().qrcode(options);
+  $("#qrCode-" + shortUrl.replace(/(:|\.|\[|\]|,|=|@)/g, "\\$1").replace(/(:|\#|\[|\]|,|=|@)/g, "\\$1") ).empty().qrCode(options);
 }
 
 function buildValueTxt(longUrl) {
